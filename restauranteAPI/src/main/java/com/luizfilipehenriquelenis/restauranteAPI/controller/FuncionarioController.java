@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api/funcionario")
+@CrossOrigin(origins = "http://localhost:4200")
 public class FuncionarioController {
 
     @Autowired
@@ -31,7 +32,7 @@ public class FuncionarioController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/{nome}")
+    @GetMapping("/{nome}") // localhost:8080/api/funcionario/luiz
     public ResponseEntity<?> buscaFuncionarioPorNome(@PathVariable String nome){
         Optional<Funcionario> funcionarioOptional = funcionarioRepository.findByNome(nome);
         if(funcionarioOptional.isPresent()){

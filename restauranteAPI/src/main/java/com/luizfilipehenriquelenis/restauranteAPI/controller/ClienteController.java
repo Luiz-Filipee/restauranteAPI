@@ -3,13 +3,12 @@ package com.luizfilipehenriquelenis.restauranteAPI.controller;
 import com.luizfilipehenriquelenis.restauranteAPI.model.Cliente;
 import com.luizfilipehenriquelenis.restauranteAPI.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/cliente")
+@RequestMapping(path = "/api/cliente") // localhost:8080/api/cliente
 public class ClienteController {
 
     @Autowired
