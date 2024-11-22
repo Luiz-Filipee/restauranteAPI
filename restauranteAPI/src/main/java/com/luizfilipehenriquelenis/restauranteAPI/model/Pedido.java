@@ -30,8 +30,12 @@ public class Pedido {
 
     private String status;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "item_id")
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "pedido_menu_item",
+            joinColumns = @JoinColumn(name = "pedido_id"),
+            inverseJoinColumns = @JoinColumn(name = "menu_item_id")
+    )
     private List<MenuItem> items;
 
     private Double precoTotal;
